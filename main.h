@@ -1,6 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include <limits.h>
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
@@ -18,5 +19,7 @@ typedef struct format
 }convert;
 
 int _printf(const char *format, ...);
+int my_putcha(char c);
+int print_per(void);
 
 #endif
