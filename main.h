@@ -8,18 +8,47 @@
 #include <unistd.h>
 
 /**
- * struct formart - converter for printf
- * @ptr: type char pointer of the specifier
- * @func: function for the conversion specifier
+ * struct flags - struct containing flags to "switch on"
+ * @plus: flag to + character
+ * @space: flag to ' ' character
+ * @hash: flag to # character
  */
-typedef struct convert
+typedef struct flag
 {
-	char *ui;
-	int (*func)(va_list);
-}confirm;
+	int plus;
+	int space;
+	int hash;
+}flag_c;
 
-int _printf(const char *format, ...);
+/**
+ * struct matcher - struct that picks the right function depending
+ * on the format specifier
+ * fs: format specifier
+ * @ptrf: pointer to function
+ */
+typedef struct matcher
+{
+	char *fs;
+	int (*ptrf)(va_list val,flag_c *ptrf);
+}m;
+
+/*writing functions */
 int my_putcha(char c);
-int print_per(void);
+int putss(char *str);
 
+/*prints alphabets */
+int p_string(va_list args, flag_c *ptrf);
+int p_char(va_list args, flag_c *ptrf);
+
+/* prints numbers */
+int p_int(va_list args, flag_c *ptrf);
+void p_number(int num);
+int p_unsigned(va_list args, flag_c *ptrf);
+int isidigit(va_list args, flag_c *ptrf);
+
+/* prints base */
+int p_hexi(va_list args, flag_c *ptrf);
+int p_hex_cap(va_list args, flag_c *ptrf);
+int p_bina(va_list args, flag_c *ptrf);
+int p_octa(va_list args, flag_c *ptrf);
 #endif
