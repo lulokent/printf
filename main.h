@@ -6,7 +6,9 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <uni>
+
+int print_rot13(va_list val)
+int print_revs(va_list val)
 
 /**
  * struct flags - struct containing flags to "switch on"
