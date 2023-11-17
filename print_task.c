@@ -6,39 +6,28 @@
  */
 int print_int(va_list args)
 {
-	int n = va_arg(args, int);
-	int num, last = n % 10, digit, exp =1;
-	int i = 1;
+	int i, j;
+	int count;
+	unsigned int num;
 
-	n = n / 10;
-	num = n;
+	j = va_arg(args, int);
+	i = 1;
+	count = 0;
 
-	if (last < 0)
+	if (j < 0)
 	{
-		my_putcha('-');
-		num = -num;
-		n = -n;
-		last = -last;
-		i++;
+		count += my_putchar('-');
+		num = j * -1;
 	}
-	if (num > 0)
+	else
+		num = j;
+	for (;num / i > 9;)
+		i *= 10;
+	for (;i != 0;)
 	{
-		while(num / 10 != 0)
-		{
-			exp = exp * 10;
-			num = num / 10;
-		}
-		num = n;
-		while (exp > 0)
-		{
-			digit = num / exp;
-			my_putcha(digit + '0');
-			num = num - (digit * exp);
-			exp = exp / 10;
-			i++;
-		}
+		count += my_putcha('0' + num / i);
+		num %= i;
+		i /= 10;
 	}
-	my_putcha(last + '0');
-
-	return (i);
+	return (count);
 }

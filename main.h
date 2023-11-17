@@ -12,11 +12,11 @@
  * @ptr: type char pointer of the specifier
  * @func: function for the conversion specifier
  */
-typedef struct format
+typedef struct convert
 {
-	char *ptr;
-	int (*func)();
-}convert;
+	char *ui;
+	int (*func)(va_list);
+}confirm;
 
 int _printf(const char *format, ...);
 int my_putcha(char c);

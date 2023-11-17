@@ -1,20 +1,25 @@
 #include "main.h"
+
 /**
  * putss - print string
  * 
  * @c: string
- * Return: number of byte
+ * Return: number of string length
  */
 int putss(char *c)
 {
-	int count = 0;
+	int i, len = 0;
+	char *str;
 
-	if (c)
+	str = va_arg(val,char *);
+
+	if (str == NULL)
+		str = "(nill)";
+
+	len = _strlen(str);
+	for (i = 0; i < len; i++)
 	{
-		for (count = 0; c[count] != '\0'; count++)
-		{
-			my_putcha(c[count]);
-		}
+		my_putcha(str[i]);
 	}
-	rteurn(count);
+	return (len);
 }

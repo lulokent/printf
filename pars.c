@@ -5,37 +5,51 @@
  * @format: character string
  * Return: number of characters printed
  */
-int _printf(const char *format, ...)
+int _pars(const char *format, func_val, va_list args)
 {
-	int i, count = 0;
-	char *str;
+	int i, j, list, puts_char;
+	puts_char = 0;
 
-	va_list args;
-
-	va_start(args, format);
+	if (format == NULL || format[0] == '%' || format[i] == '\0')
+	{
+		return (-1);
+	}
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (format[i] != '%')
+		if (format[i] == '%')
 		{
-			my_putcha(format[i]);
+			for (j = 0; func_val[j].ui != NULL; j++)
+			{
+				if (format[i + 1] == func [j].ui[0])
+				{
+					list = func[j].f(args);
+					if (list == -1)
+						return (-1);
+					puts_char += list;
+					break;
+				}
+			}
+			if (func_val[j].ui == NULL && format[i + 1] != ' ')
+			{
+				if (format[i + 1] != '\0')
+				{
+					my_putcha(format[i]);
+					my_putcha(format[i + 1]);
+					puts_char = puts_char + 2;
+				}
+				else
+				{
+					return (-1);
+				}
+				i = i + 1;
+				else
+				{
+					my_putcha(format[i]);
+					puts_char++;
+				}
+			}
 		}
-		else if (format[i + 1] == 'c')
-		{
-			my_putcha(va_arg(args,int));
-			i++;
-		}
-		else if (format[i + 1] == 's')
-		{
-			str = (va_arg(args, char *));
-			str++;
-		}
-		else if (format[i + 1] == '%')
-		{
-			my_putcha('%');
-		}
-		count++;
 	}
-	va_end(args);
-	return (count);
+	return (puts_char);
 }
