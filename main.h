@@ -6,6 +6,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <uni>
 
 /**
  * struct flags - struct containing flags to "switch on"
@@ -19,6 +20,8 @@ typedef struct flag
 	int space;
 	int hash;
 }flag_c;
+
+size_t _strlen(const char *str);
 
 /**
  * struct matcher - struct that picks the right function depending
@@ -51,4 +54,5 @@ int p_hexi(va_list args, flag_c *ptrf);
 int p_hex_cap(va_list args, flag_c *ptrf);
 int p_bina(va_list args, flag_c *ptrf);
 int p_octa(va_list args, flag_c *ptrf);
+
 #endif
