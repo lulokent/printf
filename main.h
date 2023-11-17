@@ -16,10 +16,12 @@
  */
 typedef struct flag
 {
+
 	int plus;
 	int space;
 	int hash;
-}flag_c;
+
+} flag_c;
 
 size_t _strlen(const char *str);
 
@@ -32,8 +34,8 @@ size_t _strlen(const char *str);
 typedef struct matcher
 {
 	char *fs;
-	int (*ptrf)(va_list val,flag_c *ptrf);
-}m;
+	int (*ptrf)(va_list val, flag_c *ptrf);
+} m;
 
 /*writing functions */
 int my_putcha(char c);
