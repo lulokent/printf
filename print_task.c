@@ -6,28 +6,84 @@
  */
 int print_int(va_list args)
 {
-	int i, j;
-	int count;
-	unsigned int num;
+	int n = va_arg(args, int);
+	int num, last = n % 10, digit, exp =1;
+	int i = 1;
 
-	j = va_arg(args, int);
-	i = 1;
-	count = 0;
+	n = n / 10;
+	num = n;
 
-	if (j < 0)
+	if (last < 0)
 	{
-		count += my_putchar('-');
-		num = j * -1;
+		my_putcha('-');
+		num = -num;
+		n = -n;
+		last = -last;
+		i++;
 	}
-	else
-		num = j;
-	for (;num / i > 9;)
-		i *= 10;
-	for (;i != 0;)
+	if (num > 0)
 	{
-		count += my_putcha('0' + num / i);
-		num %= i;
-		i /= 10;
+		while (num / 10 !=0)
+		{
+		exp = exp * 10;
+		num = num / 10;
+		}
+		num n;
+		while (exp > 0)
+		{
+			digit = num / exp;
+			my_putcha(digit + '0');
+			num = num - (digit * exp);
+			exp = exp / 10;
+			i++
+		}
 	}
-	return (count);
+	my_putcha(last + '0');
+
+	return (i);
+}
+
+/**
+ * print_d - prints decimal
+ * @args: argument to print
+ * Return: integer
+ */
+
+int print_d(va_list args)
+{
+	int n= va_arg(args, int);
+	int num, last = n% 10, digit:
+	int i = 1;
+
+	n = n / 10;
+	num =n;
+
+	if (last < 0)
+	{
+	my_putcha('-');
+	num = -num;
+	n = -n;
+	last = -last;
+	i++;
+	}
+	if (num > 0)
+	{
+		while (num / 10 != 0)
+		{
+		exp = exp * 10;
+		num = num / 10;
+		}
+	num = n;
+	while (exp > 0)
+	{
+		digit = num / exp;
+		my_putcha(digit + '0');
+		num = num - (digit * exp);
+		exp = exp / 10;
+		i++;
+	}
+	}
+	my_putcha(last + '0');
+
+	return (i);
 }
