@@ -6,7 +6,6 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <uni>
 
 /**
  * struct flags - struct containing flags to "switch on"
@@ -54,5 +53,13 @@ int p_hexi(va_list args, flag_c *ptrf);
 int p_hex_cap(va_list args, flag_c *ptrf);
 int p_bina(va_list args, flag_c *ptrf);
 int p_octa(va_list args, flag_c *ptrf);
+
+/*converter*/
+char *convert(unsigned long int num, int base, int lowerca);
+
+/*flags*/
+int g_flag(char c, flag_c *ptrf);
+
+int (*g_fun(char c))(va_list, flag_c *);
 
 #endif
