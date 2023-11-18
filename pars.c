@@ -1,55 +1,30 @@
 #include "main.h"
 
 /**
- * _printf - is function that produces output according to format
- * @format: character string
- * Return: number of characters printed
+ * convert - function that converts number and base into string
+ * @num: number
+ * @base: base
+ * @lowerca: flag if the hexidecimal values should be in lowercase
+ * Return: string result
  */
-int _pars(const char *format, func_val, va_list args)
+char *convert(unsigned long int num, int base, int lowerca)
 {
-	int i, j, list, puts_char;
-	puts_char = 0;
+	static char * res;
+	static char buff[50];
+	char *p;
 
-	if (format == NULL || format[0] == '%' || format[i] == '\0')
-	{
-		return (-1);
-	}
+	res = (lowerca)
+		?"0123456789abcdef"
+		:"0123456789ABCDEF";
+	p = &buff[49];
+	*p = '\0';
 
-	for (i = 0; format[i] != '\0'; i++)
+	do
 	{
-		if (format[i] == '%')
-		{
-			for (j = 0; func_val[j].ui != NULL; j++)
-			{
-				if (format[i + 1] == func [j].ui[0])
-				{
-					list = func[j].f(args);
-					if (list == -1)
-						return (-1);
-					puts_char += list;
-					break;
-				}
-			}
-			if (func_val[j].ui == NULL && format[i + 1] != ' ')
-			{
-				if (format[i + 1] != '\0')
-				{
-					my_putcha(format[i]);
-					my_putcha(format[i + 1]);
-					puts_char = puts_char + 2;
-				}
-				else
-				{
-					return (-1);
-				}
-				i = i + 1;
-				else
-				{
-					my_putcha(format[i]);
-					puts_char++;
-				}
-			}
-		}
+		*--p = res[num % base];
+		num /= base;
 	}
-	return (puts_char);
+	while (num != 0);
+
+	return (p);
 }

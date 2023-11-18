@@ -6,6 +6,8 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
+<<<<<<< HEAD
+=======
 
 typedef struct format
 {
@@ -15,6 +17,7 @@ typedef struct format
 
 int print_rot13(va_list val)
 int print_revs(va_list val)
+>>>>>>> 2aaa4689a08af065d1ef98115191aebd33a67e1f
 
 /**
  * struct flags - struct containing flags to "switch on"
@@ -64,5 +67,13 @@ int p_hexi(va_list args, flag_c *ptrf);
 int p_hex_cap(va_list args, flag_c *ptrf);
 int p_bina(va_list args, flag_c *ptrf);
 int p_octa(va_list args, flag_c *ptrf);
+
+/*converter*/
+char *convert(unsigned long int num, int base, int lowerca);
+
+/*flags*/
+int g_flag(char c, flag_c *ptrf);
+
+int (*g_fun(char c))(va_list, flag_c *);
 
 #endif
