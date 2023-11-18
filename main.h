@@ -6,18 +6,19 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
-<<<<<<< HEAD
-=======
+
+/**
+ * struct format - conventer for printf
+ * @ph: type char pointer of the specifier
+ * @fumction: function for the conversion specifier
+ *
+ */
 
 typedef struct format
 {
-	char *id;
-	int (*f)();
-} match;
-
-int print_rot13(va_list val)
-int print_revs(va_list val)
->>>>>>> 2aaa4689a08af065d1ef98115191aebd33a67e1f
+	char *ph;
+	int (*function)();
+} convert;
 
 /**
  * struct flags - struct containing flags to "switch on"
