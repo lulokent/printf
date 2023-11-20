@@ -8,6 +8,19 @@
 #include <unistd.h>
 
 /**
+ * struct format - conventer for printf
+ * @ph: type char pointer of the specifier
+ * @fumction: function for the conversion specifier
+ *
+ */
+
+typedef struct format
+{
+	char *ph;
+	int (*function)();
+} convert;
+
+/**
  * struct matcher - converter for printf
  * fs: pointer to the specifier
  * @function: function for the conversion specifier

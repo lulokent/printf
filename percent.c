@@ -5,8 +5,8 @@
  *
  * Return: 1
  */
-int print_per(void)
+int print_37(void)
 {
-	my_putcha (37);
+	my_putcha(37);
 	return (1);
 }
