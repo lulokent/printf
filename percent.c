@@ -7,6 +7,6 @@
  */
 int print_per(void)
 {
-	my_putcha('%');
+	my_putcha (37);
 	return (1);
 }

@@ -2,14 +2,14 @@
 
 /**
  * print_char - a function that prints characters
- * @c: character to be printed
- * @n: number of times the character to be printed
- * Return: void
+ * @args: arguemnts
+ * Return: integer
  */
-void print_char(char c, int n)
+int print_char(va_list args)
 {
-	int i;
+	char c;
 
-	for (i = 0; i < n; i++)
-		my_putcha(c);
+	c = va_arg(args, int);
+	my_putcha(c);
+	return (1);
 }

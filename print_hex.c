@@ -7,7 +7,7 @@
  */
 int p_hexi(va_list args)
 {
-	int b, ar, count = 0;
+	int b, *ar, count = 0;
 	unsigned int tmp = n;
 	unsigned int n = va_arg(args, unsigned int);
 
@@ -19,6 +19,7 @@ int p_hexi(va_list args)
 	count++;
 
 	ar = malloc(count * sizeof(int));
+
 	for (b = 0; b < count; b++)
 	{
 		ar[b] = tmp % 16;
@@ -26,7 +27,8 @@ int p_hexi(va_list args)
 	}
 	for (b = count - 1; b > 0; b--)
 	{
-		ar[b] = ar[b] + 7;
+		if (ar[b] > 9)
+			ar[b] = ar[b] + 7;
 		my_putcha(ar[b] + '0');
 	}
 	free(ar);
