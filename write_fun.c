@@ -10,14 +10,14 @@ int my_putcha(char *c)
 	static char buff[1024];
 	static int j;
 
-	if (c == -1 || j >= 1024)
+	if (c == NULL || j >= 1024)
 	{
 		write(1, &buff,j);
 		j = 0;
 	}
-	if (c != -1)
+	if (c != NULL)
 	{
-		buff[j] = c;
+		buff[j] = *c;
 		j++;
 	}
 	return (1);
@@ -33,6 +33,6 @@ int putss(char *str)
 	int i;
 
 	for (i = 0; str[i] != '\0'; i++)
-		my_putcha(str[i]);
-	return (i);
+		my_putcha((char *)str[i]);
+	return (0);
 }

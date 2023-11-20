@@ -7,7 +7,7 @@
  * ptrf: pointer to the struct flags
  * Return: 1 a flag has been switched on ,otherwise 0
  */
-int g_flag(char c, flag_c *ptr)
+int g_flag(char c, flag_c *ptrf)
 {
 	int j = 0;
 

@@ -10,6 +10,12 @@
  */
 int (*g_fun(char c))(va_list, flag_c *)
 {
+	int param = 0;
+	int actual = 0;
+	char param_name[100];
+	char text[100];
+	int *parametlist = NULL;
+
 	m fun_ar[] = {
 		{'i', p_int},
 		{'s', p_string},

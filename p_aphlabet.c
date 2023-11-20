@@ -14,13 +14,13 @@ int p_string(va_list args, flag_c *ptrf)
 
 	if (!s)
 		s = "(null)";
-	return(putss(s));
+	return (putss(s));
 }
 
 /**
  * p_char - prints character
  * @args: arguments to the printf
- * ptrf: pointer to the struct flag
+ * @ptrf: pointer to the struct flag
  * Return: number of character
  */
 int p_char(va_list args, flag_c *ptrf)
@@ -29,6 +29,6 @@ int p_char(va_list args, flag_c *ptrf)
 
 	(void)ptrf;
 
-	my_putcha(va_arg(args,int));
+	my_putcha(va_arg(args, int));
 	return (i);
 }

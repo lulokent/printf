@@ -10,7 +10,7 @@
  */
 int p_hexi(va_list args, flag_c *ptrf)
 {
-	unsigned int n = va_arg(args, unsigned int);
+	unsigned int num = va_arg(args, unsigned int);
 	char *c = convert(num, 16, 1);
 	int check = 0;
 
@@ -18,7 +18,7 @@ int p_hexi(va_list args, flag_c *ptrf)
 		check += putss("0x");
 	check += putss(c);
 
-	return(check);
+	return (check);
 }
 
 /**
@@ -29,7 +29,7 @@ int p_hexi(va_list args, flag_c *ptrf)
  */
 int p_hexi_cap(va_list args, flag_c *ptrf)
 {
-	unsigned int n = va_arg(args, unsigned int);
+	unsigned int num = va_arg(args, unsigned int);
 	char *s = convert(num, 16, 0);
 	int check = 0;
 
@@ -49,12 +49,12 @@ int p_hexi_cap(va_list args, flag_c *ptrf)
  */
 int p_bina(va_list args, flag_c *ptrf)
 {
-	unsigned int n = va_arg(args, unsigned int);
+	unsigned int num = va_arg(args, unsigned int);
 	char *s = convert(num, 2, 0);
 
 	(void)ptrf;
 
-	return (my_putcha(s));
+	return (my_putcha(char *) s);
 }
 
 /**
@@ -65,12 +65,12 @@ int p_bina(va_list args, flag_c *ptrf)
  */
 int p_octa(va_list args, flag_c *ptrf)
 {
-	unsigned int n = va_arg(arg, unsigned int);
+	unsigned int num = va_arg(args, unsigned int);
 	char *s = convert(num, 8, 0);
 	int check = 0;
 
 	if (ptrf->hash == 1 && s[0] != '0')
 		check += my_putcha('0');
 	check += putss(s);
-	return(check);
+	return (check);
 }

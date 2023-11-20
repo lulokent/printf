@@ -31,10 +31,10 @@ int p_int(va_list args, flag_c *ptrf)
 int p_unsigned(va_list args, flag_c *ptrf)
 {
 	unsigned int i = va_arg(args, unsigned int);
-	char *n = convert(u,10,0);
+	char *n = convert(u, 10, 0);
 
 	(void) ptrf;
-	return(my_putcha(n));
+	return (my_putcha(n));
 }
 
 /**
@@ -56,7 +56,7 @@ void p_number(int num)
 }
 
 /**
- * isidigit - return a number of digits 
+ * isidigit - return a number of digits
  * @i: integer to evaluate
  * Return: number
  */
@@ -66,7 +66,7 @@ int isidigit(int i)
 	unsigned int l;
 
 	if (i < 0)
-		l = i * - 1;
+		l = i * -1;
 	else
 		l = i;
 	while (l != 0)
@@ -74,5 +74,26 @@ int isidigit(int i)
 		l /= 10;
 		j++;
 	}
-	return(j);
+	return (j);
+}
+
+/**
+ * convert - converts an integer into a string
+ * @num: integer to convert
+ * @base: base for the conversion
+ * @pad: flag indicating whether to pad to zero
+ * Return: character string
+ */
+char *convert(unsigned int num, int base, int pad)
+{
+	int digits = isidigit(num);
+	int i;
+	char *buff = malloc(digits + pad + 1);
+
+	for (i = digits + pad - 1; i >= 0; i--)
+	{
+		buff[i] = (num % base) + '0';
+		num /= base;
+	}
+	return (buff);
 }

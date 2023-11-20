@@ -6,12 +6,6 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
-<<<<<<< HEAD
-=======
-
-int print_rot13(va_list val)
-int print_revs(va_list val)
->>>>>>> 2aaa4689a08af065d1ef98115191aebd33a67e1f
 
 /**
  * struct flags - struct containing flags to "switch on"
@@ -26,7 +20,7 @@ typedef struct flag
 	int space;
 	int hash;
 
-} flag_c;
+}flag_c;
 
 size_t _strlen(const char *str);
 
@@ -39,8 +33,8 @@ size_t _strlen(const char *str);
 typedef struct matcher
 {
 	char *fs;
-	int (*ptrf)(va_list val, flag_c *ptrf);
-} m;
+	int (*ptrf)(va_list, flag_c *);
+}m;
 
 /*writing functions */
 int my_putcha(char c);
@@ -70,4 +64,7 @@ int g_flag(char c, flag_c *ptrf);
 
 int (*g_fun(char c))(va_list, flag_c *);
 
+/*custom*/
+int print_rot13(va_list val);
+int print_revs(va_list val);
 #endif
