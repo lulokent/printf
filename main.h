@@ -20,6 +20,9 @@ typedef struct format
 	int (*function)();
 } convert;
 
+/* custom printf function*/
+int _printf(const char * const format, ...);
+
 /*writing functions */
 int my_putcha(char c);
 int putss(char *str);
@@ -28,21 +31,25 @@ int putss(char *str);
 int print_per(void);
 
 /*prints alphabets */
-int p_string(va_list args, flag_c *ptrf);
-int p_char(va_list args, flag_c *ptrf);
+int p_string(va_list args);
+int p_char(va_list args);
 
 /* prints numbers */
-
+int print_i(va_list args);
+int print_unsigned(va_list args);
 
 /* prints base */
 int p_hexi(va_list args);
-int print_bina(va_list args);
+int print_bin(va_list val);
 int p_hexi_extra(unsigned int num);
 int p_hexi_extra(unsigned long int num);
+int print_oct(va_list val);
 
 /*custom*/
 int print_rot13(va_list val);
 int print_revs(va_list val);
 int print_exec_string(va_list args);
+int print_pointer(va_list val);
+int print_revs(va_list args);
 
 #endif
