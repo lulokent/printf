@@ -31,8 +31,10 @@ int putss(char *str);
 int print_per(void);
 
 /*prints alphabets */
-int p_string(va_list args);
+int print_s(va_list val);
 int p_char(va_list args);
+int _strlen(char *s);
+int _strlenc(const char *s);
 
 /* prints numbers */
 int print_i(va_list args);
