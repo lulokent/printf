@@ -10,7 +10,7 @@ int print_rot13(va_list args)
 	int k = 0;
 	char *s = va_arg(args, char*);
 	char al[] = {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
-	char bl[] = {nopqrstuvwxyzabcdefghijklNOPQRSTUVWXYZABCDEFGHIJKLM}"};
+	char bl[] = {"nopqrstuvwxyzabcdefghijklNOPQRSTUVWXYZABCDEFGHIJKLM}"};
 
 	if (s == NULL)
 		s = "(null";
@@ -19,10 +19,10 @@ int print_rot13(va_list args)
 		k = 0;
 		for (j = 0; al[j] && !k; j++)
 		{
-			if(s[i] == al[j])
+			if (s[i] == al[j])
 			{
 				my_putcha(bl[j]);
-				counter++;;
+				counter++;
 				k = 1;
 			}
 		}

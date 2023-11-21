@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * _printf - produces output according to a format
+ * _printf - function that selects the correct function
  * @format: is a character string
  * Return: the length of the string
  */
-int _printf(const char * const format, ...)
+i to printnt _printf(const char * const format, ...)
 {
 	convert p[] = {
 	{"%s", print_s}, {"%c", print_c},
@@ -27,18 +27,18 @@ int _printf(const char * const format, ...)
 Here:
 	while (format[i] != '\0')
 	{
-	j = 13;
-	while (j >= 0)
+		j = 13;
+		while (j >= 0)
 		{
-			if (p[j].ph[0] == format[i] && p[j].ph[1] == format[i + 1]
+			if (p[j].ph[0] == format[i] && (p[j].ph[1] == format[i + 1]))
 			{
-			length += p[j].function(args);
-			i = i + 2;
-			goto Here;
+				length += p[j].function(args);
+				i = (i + 2);
+				goto Here;
 			}
 			j--;
 		}
-		_my_putcha(format[i]);
+		my_putcha(format[i]);
 		length++;
 		i++;
 	}

@@ -1,13 +1,13 @@
 #include "main.h"
 /**
- * printf_i - it prints integer
+ * print_i - it prints integer
  * @args: arguments to print
  * Return: an integer
  */
 int print_i(va_list args)
 {
 	int n = va_arg(args, int);
-	int num, last = n % 10, digit, exp =1;
+	int num, last = n % 10, digit, exp = 1;
 	int i = 1;
 
 	n = n / 10;
@@ -23,7 +23,7 @@ int print_i(va_list args)
 	}
 	if (num > 0)
 	{
-		while (num / 10 !=0)
+		while (num / 10 != 0)
 		{
 			exp = exp * 10;
 			num = num / 10;
