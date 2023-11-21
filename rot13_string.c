@@ -1,33 +1,34 @@
 #include "main.h"
 /**
- * print_rot13 - convert to rot10 string
- * @val: arguments
+ * print_rot13 - convert to rot10
+ * @args: printf arguments
  * Return: counter
  */
-int print_rot13(va_list val)
+int print_rot13(va_list args)
 {
 	int i, j, counter = 0;
 	int k = 0;
-	char *s = va_arg(val, char*);
-	char a[] = {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
-	char b[] = {nopqrstuvwxyzabcdefghijklNOPQRSTUVWXYZABCDEFGHIJKLM}"};
+	char *s = va_arg(args, char*);
+	char al[] = {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
+	char bl[] = {nopqrstuvwxyzabcdefghijklNOPQRSTUVWXYZABCDEFGHIJKLM}"};
 
 	if (s == NULL)
-
-	for (i = 0; s[i]; i==)
+		s = "(null";
+	for (i = 0; s[i]; i++)
 	{
 		k = 0;
-		for (j = 0; a[j] && !k; j++)
+		for (j = 0; al[j] && !k; j++)
 		{
-			if(s[i] == a[j])
-			{_putcha(b[j]);
-			counter++;;
-			k = 1;
+			if(s[i] == al[j])
+			{
+				my_putcha(bl[j]);
+				counter++;;
+				k = 1;
 			}
 		}
 		if (!k)
 		{
-			_putcha(s[1])
+			my_putcha(s[i]);
 			counter++;
 		}
 	}

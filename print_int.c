@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * printf_int - it prints integer
+ * printf_i - it prints integer
  * @args: arguments to print
- * Return: the number of characters printed
+ * Return: an integer
  */
-int print_int(va_list args)
+int print_i(va_list args)
 {
 	int n = va_arg(args, int);
 	int num, last = n % 10, digit, exp =1;
@@ -25,17 +25,17 @@ int print_int(va_list args)
 	{
 		while (num / 10 !=0)
 		{
-		exp = exp * 10;
-		num = num / 10;
+			exp = exp * 10;
+			num = num / 10;
 		}
-		num n;
+		num = n;
 		while (exp > 0)
 		{
 			digit = num / exp;
-			my_putcha(digit + '0');
+			my_putcha(digit + '/0')
 			num = num - (digit * exp);
 			exp = exp / 10;
-			i++
+			i++;
 		}
 	}
 	my_putcha(last + '0');
@@ -51,39 +51,40 @@ int print_int(va_list args)
 
 int print_d(va_list args)
 {
-	int n= va_arg(args, int);
-	int num, last = n% 10, digit:
-	int i = 1;
+	int n = va_arg(args, int);
+	int num, last = n % 10, digit;
+	int  i = 1;
+	int exp = 1;
 
 	n = n / 10;
-	num =n;
+	num = n;
 
 	if (last < 0)
 	{
-	my_putcha('-');
-	num = -num;
-	n = -n;
-	last = -last;
-	i++;
+		my_putcha('-');
+		num = -num;
+		n = -n;
+		last = -last;
+		i++;
 	}
 	if (num > 0)
 	{
 		while (num / 10 != 0)
 		{
-		exp = exp * 10;
-		num = num / 10;
+			exp = exp * 10;
+			num = num / 10;
 		}
-	num = n;
-	while (exp > 0)
-	{
-		digit = num / exp;
-		my_putcha(digit + '0');
-		num = num - (digit * exp);
-		exp = exp / 10;
-		i++;
+		num = n;
+		while (exp > 0)
+		{
+			digit = num / exp;
+			my_putcha(digit + '0');
+			num = num - (digit * exp);
+			exp = exp / 10;
+			i++;
+		}
 	}
-	}
-	my_putcha(last + '0');
+	_putchar(last + '0');
 
 	return (i);
 }
