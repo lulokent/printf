@@ -2,10 +2,10 @@
 
 /**
  * _printf - function that selects the correct function
- * @format: is a character string
+ * @format: identifer to look for
  * Return: the length of the string
  */
-i to printnt _printf(const char * const format, ...)
+int _printf(const char * const format, ...)
 {
 	convert p[] = {
 	{"%s", print_s}, {"%c", print_c},
