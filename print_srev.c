@@ -6,7 +6,6 @@
  *
  * Return: the string
  */
-
 int print_revs(va_list args)
 {
 	char *s = va_arg(val, char*);
