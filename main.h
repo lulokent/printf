@@ -39,6 +39,7 @@ int print_i(va_list args);
 int print_unsigned(va_list args);
 
 /* prints base */
+int print_HEX(va_list args);
 int p_hexi(va_list args);
 int print_bin(va_list val);
 int p_hexi_extra(unsigned int num);
