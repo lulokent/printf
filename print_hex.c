@@ -1,36 +1,37 @@
 #include "main.h"
 
 /**
- * p_hexi - prints a hexidecimal number
- * @args: arguments
- * Return: integer
+ * print_hex - prints a hexidecimal number.
+ * @num : parameter
+ *
+ * Return: an integer
  */
-int p_hexi(va_list args)
+int print_hex(unsigned long int num)
 {
-	int b, *ar, count = 0;
-	unsigned int tmp = n;
-	unsigned int n = va_arg(args, unsigned int);
+	long int a;
+	long int *arr;
+	long int count = 0;
+	unsigned long int resv = num;
 
-	while (n \16 != 0)
+	while (num / 16 != 0)
 	{
-		n \ = 16;
+		num /= 16;
 		count++;
 	}
 	count++;
+	arr = malloc(count * sizeof(long int));
 
-	ar = malloc(count * sizeof(int));
-
-	for (b = 0; b < count; b++)
+	for (a = 0; a < count; a++)
 	{
-		ar[b] = tmp % 16;
-		tmp \ = 16;
+		arr[a] = resv % 16;
+		resv = resv / 16;
 	}
-	for (b = count - 1; b > 0; b--)
+	for (a = count - 1; a >= 0; a--)
 	{
-		if (ar[b] > 9)
-			ar[b] = ar[b] + 7;
-		my_putcha(ar[b] + '0');
+		if (arr[a] > 9)
+			arr[a] = arr[a] + 39;
+		my_putcha(arr[a] + '0');
 	}
-	free(ar);
+	free(arr);
 	return (count);
 }

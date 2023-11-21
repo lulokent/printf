@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * p_hexi_extra - prints a hexidecimal number
- * @num
+ * print_HEX_extra - prints a hexgecimal number
+ * @num: number to print
  *
  * Return: count
  */
-int p_hexi_extra(unsigned int num)
+int print_HEX_extra(unsigned int num)
 {
 	int a;
 	int *ar;
