@@ -3,7 +3,7 @@
 /**
  * _printf - produces output according to a format
  * @format: is a character string
- * Return: number of characters printed
+ * Return: the length of the string
  */
 int _printf(const char * const format, ...)
 {
@@ -40,6 +40,8 @@ Here:
 		}
 		_my_putcha(format[i]);
 		length++;
+		i++;
 	}
 	va_end(args);
 	return (length);
+}
