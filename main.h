@@ -45,7 +45,7 @@ int print_HEX(va_list args);
 int print_hex(va_list args);
 int print_bin(va_list args);
 int print_HEX_extra(unsigned int num);
-int print_hex(unsigned long int num);
+int print_hex_extra(unsigned long int num);
 int print_oct(va_list args);
 
 /*custom*/

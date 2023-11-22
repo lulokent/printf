@@ -6,7 +6,7 @@
  *
  * Return: an integer
  */
-int print_hex(unsigned long int num)
+int print_hex_extra(unsigned long int num)
 {
 	long int a;
 	long int *arr;
