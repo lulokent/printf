@@ -5,7 +5,7 @@
  * @val: argument
  * Return: the length of the string
  */
-int print_s(va_list val)
+int print_s(va_list args)
 {
 	char *s;
 	int i, len;
@@ -13,7 +13,7 @@ int print_s(va_list val)
 	s = va_args(val, char *);
 	if (s == NULL)
 	{
-		S = "(null)";
+		s = "(null)";
 		len = _strlen(s);
 		for (i = 0; i < len; i++)
 			my_putcha(s[i]);
