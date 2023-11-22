@@ -3,25 +3,27 @@
 /**
  * _strlen - finds the length of a string
  * @s: string
- * Return: integer
+ * Return: length of string
  */
 int _strlen(char *s)
 {
-	int c;
+	int len = 0;
 
-	for (c = 0; s[c] != 0; c++)
-	return (c);
+	for (len = 0; s[len] != 0; len++)
+
+	return (len);
 }
 
 /**
  * _strlenc - finds length of a string but for constant characters
  * @s: string
- * Return: integer
+ * Return: length of the constant string
  */
 int _strlenc(const char *s)
 {
-	int c;
+	int len = 0;
 
-	for (c = 0; s[c] != 0; c++)
-	return (c);
+	for (len = 0; s[len] != 0; len++)
+
+	return (len);
 }
