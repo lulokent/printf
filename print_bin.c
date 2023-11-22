@@ -2,7 +2,11 @@
 
 /**
  * print_bin - prints a binary number
+<<<<<<< HEAD
  * @args: arguments
+=======
+ * @args: va_list containing the variable arguments
+>>>>>>> 3692c7eaefa077c009d5aee9129bfe1b3c246527
  * Return: an integer
  */
 int print_bin(va_list args)

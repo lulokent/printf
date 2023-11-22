@@ -5,7 +5,7 @@
  * @args: arguments
  * Return: length of the string
  */
-int print_exc_string(va_list args)
+int print_exec_string(va_list args)
 {
 	char *str;
 	int i, len = 0;

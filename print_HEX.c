@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_HEX - prints a hexidecimal number 
+ * print_HEX - prints a hexidecimal number
  * @args: arguments
  * Return: count
  */

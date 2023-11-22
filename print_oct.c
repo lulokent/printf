@@ -2,7 +2,11 @@
 
 /**
  * print_oct - prints an octal number
+<<<<<<< HEAD
  * @args: arguments
+=======
+ * @args: variable arguments
+>>>>>>> 3692c7eaefa077c009d5aee9129bfe1b3c246527
  * Return: counter
  */
 int print_oct(va_list args)
