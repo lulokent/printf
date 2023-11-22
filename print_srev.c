@@ -2,7 +2,7 @@
 
 /**
  * print_revs - a function that prints a reverse str
- * @args: type struct va_arg there is allocated printf arguments
+ * @args: type struct va_arg where is allocated printf arguments
  *
  * Return: the string
  */

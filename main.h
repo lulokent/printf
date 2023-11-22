@@ -25,7 +25,6 @@ int _printf(const char * const format, ...);
 
 /*writing functions */
 int my_putcha(char c);
-int putss(char *str);
 
 /*prints customs*/
 int print_per(void);

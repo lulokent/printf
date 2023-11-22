@@ -1,4 +1,4 @@
-#imclude "main.h"
+#include "main.h"
 /**
  * print_s - print a string
  * @val: argument
