@@ -27,7 +27,7 @@ int _printf(const char * const format, ...);
 int my_putcha(char c);
 
 /*prints customs*/
-int print_37(void);
+int print_percent(void);
 
 /*prints alphabets */
 int print_s(va_list args);
