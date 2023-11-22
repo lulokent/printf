@@ -27,30 +27,31 @@ int _printf(const char * const format, ...);
 int my_putcha(char c);
 
 /*prints customs*/
-int print_per(void);
+int print_37(void);
 
 /*prints alphabets */
-int print_s(va_list val);
-int p_char(va_list args);
+int print_s(va_list args);
+int print_c(va_list args);
 int _strlen(char *s);
 int _strlenc(const char *s);
 
 /* prints numbers */
 int print_i(va_list args);
 int print_unsigned(va_list args);
+int print_d(va_list args);
 
 /* prints base */
 int print_HEX(va_list args);
-int p_hexi(va_list args);
-int print_bin(va_list val);
-int p_hexi_extra(unsigned int num);
-int p_hexi_extra(unsigned long int num);
-int print_oct(va_list val);
+int print_hex(va_list args);
+int print_bin(va_list args);
+int print_HEX_extra(unsigned int num);
+int print_hex(unsigned long int num);
+int print_oct(va_list args);
 
 /*custom*/
-int print_rot13(va_list val);
-int print_revs(va_list val);
-int print_exec_string(va_list args);
+int print_rot13(va_list args);
+int print_revs(va_list args);
+int print_exc_string(va_list args);
 int print_pointer(va_list val);
 int print_revs(va_list args);
 

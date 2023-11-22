@@ -5,7 +5,7 @@
  * @val: arguments
  * Return: counter
  */
-int print_pointer(va_list val)
+int print_pointer(va_list args)
 {
 	void *p;
 	char *s = "nil";

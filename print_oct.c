@@ -5,7 +5,7 @@
  * @val: arguments
  * Return: counter
  */
-int print_oct(va_list val)
+int print_oct(va_list args)
 {
 	int i;
 	int *array;

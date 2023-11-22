@@ -8,7 +8,7 @@
 int print_HEX(va_list args)
 {
 	int a;
-	int arr;
+	int *arr;
 	int count;
 	unsigned int num = va_arg(args, unsigned int);
 	unsigned int resv = num;

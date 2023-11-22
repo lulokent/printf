@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * p_hexi - prints an hexidecimal number
+ * print_hex - prints an hexidecimal number
  * @args: arguents
  * Return: count
  */
-int p_hexi(va_list args)
+int print_hex(va_list args)
 {
 	int a, *ar;
 	int count = 0;
