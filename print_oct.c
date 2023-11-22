@@ -2,7 +2,7 @@
 
 /**
  * print_oct - prints an octal number
- * @val: arguments
+ * @args: variable arguments
  * Return: counter
  */
 int print_oct(va_list args)

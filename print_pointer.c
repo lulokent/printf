@@ -2,7 +2,7 @@
 
 /**
  * print_pointer - prints an hexgecimal number
- * @val: arguments
+ * @args: arguments
  * Return: counter
  */
 int print_pointer(va_list args)

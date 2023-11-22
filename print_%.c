@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * print_per - function that prints %
+ * print_percent - function that prints %
  *
  * Return: 1
  */
-int print_37(void)
+int print_percent(void)
 {
-	my_putcha(37);
+	my_putcha('%');
 	return (1);
 }
