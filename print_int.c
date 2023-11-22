@@ -32,7 +32,7 @@ int print_i(va_list args)
 		while (exp > 0)
 		{
 			digit = num / exp;
-			my_putcha(digit + '/0')
+			my_putcha(digit + '0');
 			num = num - (digit * exp);
 			exp = exp / 10;
 			i++;
@@ -84,7 +84,7 @@ int print_d(va_list args)
 			i++;
 		}
 	}
-	_putchar(last + '0');
+	my_putcha(last + '0');
 
 	return (i);
 }

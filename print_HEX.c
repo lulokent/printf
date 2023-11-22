@@ -21,6 +21,11 @@ int print_HEX(va_list args)
 	count++;
 	arr = malloc(count * sizeof(int));
 
+	for (a = 0; a < count; a++)
+	{
+		arr[a] = resv % 16;
+		resv /= 16;
+	}
 	for (a = count - 1; a >= 0; a--)
 	{
 		if (arr[a] > 9)

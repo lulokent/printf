@@ -21,6 +21,12 @@ int print_HEX_extra(unsigned int num)
 	count++;
 	ar = malloc(count * sizeof(int));
 
+	for (a = 0; a < count; a++)
+	{
+		ar[a] = temp % 16;
+		temp /= 16;
+	}
+
 	for (a = count - 1; a >= 0; a--)
 	{
 		if (ar[a] > 9)

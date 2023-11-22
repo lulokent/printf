@@ -27,12 +27,12 @@ int print_exc_string(va_list args)
 			my_putcha('0');
 			len++;
 			}
-			len = len + p_hexi_extra(val;
+			len = len + print_hex_extra(val);
 		}
 		else
 		{
 			my_putcha(str[i]);
-			len++
+			len++;
 		}
 	}
 	return (len);

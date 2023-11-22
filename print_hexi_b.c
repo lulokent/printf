@@ -20,7 +20,7 @@ int print_hex(va_list args)
 	count++;
 	ar = malloc(count * sizeof(int));
 
-	for (i = 0; i < count; i++)
+	for (a = 0; a < count; a++)
 	{
 		ar[a] = temp % 16;
 		temp /= 16;
