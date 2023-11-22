@@ -51,7 +51,7 @@ int print_oct(va_list args);
 /*custom*/
 int print_rot13(va_list args);
 int print_revs(va_list args);
-int print_exc_string(va_list args);
+int print_exec_string(va_list args);
 int print_pointer(va_list val);
 int print_revs(va_list args);
 

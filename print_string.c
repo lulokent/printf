@@ -11,21 +11,16 @@ int print_s(va_list args)
 
 	s = va_arg(args, char *);
 	if (s == NULL)
+
 	{
 		s = "(null)";
 	}
+
 		len = _strlen(s);
 		for (i = 0; i < len; i++)
 	{
 		my_putcha(s[i]);
 	}
+
 		return (len);
-	}
-	else
-	{
-		len = _strlen(s);
-		for (i = 0; i < len; i++)
-			my_putcha(s[i]);
-		return (len);
-	}
 }
